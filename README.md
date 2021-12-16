@@ -40,13 +40,13 @@ The robot speed shall be within the range of 0.0 to 2.0
 Pseudocode
 ------------------------
 
-Controll_node
----
+## Controll_node
+
 ```pseudocode
 
 ```
-Ui_node
----
+## Ui_node
+
 ```pseudocode
 
 ```
