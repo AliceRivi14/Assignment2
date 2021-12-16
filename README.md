@@ -15,7 +15,7 @@ $ git clone https://github.com/AliceRivi14/Assignment2
 $ cd ..
 $ catkin_make
 ```
-Add the line ‘source [ws_path]/devel/setup.bash’ in your .bashrc file.
+Add the line `‘source [ws_path]/devel/setup.bash’` in your `.bashrc` file.
 
 To be able to run the nodes you must first run the master:
 ```bashscript
