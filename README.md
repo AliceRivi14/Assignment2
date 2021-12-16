@@ -11,7 +11,7 @@ In a terminale type the following commands:
 ```bashscript
 $ mkdir -p ROS_ws/src
 $ cd ROS_ws/src
-$ git clone ??
+$ git clone https://github.com/AliceRivi14/Assignment2
 $ cd ..
 $ catkin_make
 ```
@@ -39,4 +39,14 @@ The robot speed shall be within the range of 0.0 to 2.0
 
 Pseudocode
 ------------------------
+
+Controll_node
+---
 ```pseudocode
+
+```
+Ui_node
+---
+```pseudocode
+
+```
