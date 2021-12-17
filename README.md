@@ -70,7 +70,7 @@ This node has three functions:
 
 It is possible to use the ranges vector to see robot distance from the wall.
 
-* bool VelocityCallback(second_assignment::Velocity::Request &req, second_assignment::Velocity::Response &res):
+* `bool VelocityCallback(second_assignment::Velocity::Request &req, second_assignment::Velocity::Response &res)`:
 
 allows to receive and manage requests received from node UI.
 
@@ -88,7 +88,7 @@ To reset the position you need the standar service 'reset_position' from the 'st
 
 This function also creates the server's response to the client's request. The response is a float containing the value of accelleration.
 
-* void LaserCallback(const sensor_msgs::LaserScan::ConstPtr& scan):
+* `void LaserCallback(const sensor_msgs::LaserScan::ConstPtr& scan)`:
 
 is called when a message is posted on the `base_scan` topic. 
 
@@ -114,13 +114,14 @@ You can manage the speed of the robot and reset the position thanks to the servi
 Subscriber
 * `base_scan (sensor_msgs/LaserScan)`: scans from the laser model.
 
+
 This node has two functions:
 
-* char Input():
+* `char Input()`:
 
 print a character request message and return the character given in input by the user.
 
-* void ScanCallback(const sensor_msgs::LaserScan::ConstPtr& msg):
+* `void ScanCallback(const sensor_msgs::LaserScan::ConstPtr& msg)`:
 
 used to send the request to change the velocity and reset the position.
 The request of the service `char input` is sent to the server, located in controller node, by the client (UI node), in the server the request is received and the velocity is modified consequently. The value of acceleration is assigned to service response `float32 acc`.
