@@ -61,24 +61,39 @@ This node has three functions:
 * `float RobotDistance(int min, int max, float dist_obs[])` in which:
 
 `min`: minimum index of the subsection of the array that we want to analyze.
+
 `max`: maximum index of the subsection of the array that we want to analyze.
+
 `dist_obs[]`: array wich contains 721 elements wich are the distance of the obstacles from the robot.
+
 `dist_value`: minimun distance from an obstacle in the subsection of the array.
+
 It is possible to use the ranges vector to see robot distance from the wall.
 
 * bool VelocityCallback(second_assignment::Velocity::Request &req, second_assignment::Velocity::Response &res):
+
 allows to receive and manage requests received from node UI.
+
 The user through the inputs sent by keyboard can change the speed of the robot or reset its position:
-`a` to increase the velocity,
-`d` to decrease the velocity,
-`r` to reset the position.
+
+`a` to increase the velocity
+
+`d` to decrease the velocity
+
+`r` to reset the position
+
 To reset the position you need the standar service 'reset_position' from the 'std_srvs'package.
+
 `x` to avoid to increment non-stop
+
 This function also creates the server's response to the client's request. The response is a float containing the value of accelleration.
 
 * void LaserCallback(const sensor_msgs::LaserScan::ConstPtr& scan):
+
 is called when a message is posted on the `base_scan` topic. 
+
 The robot can see with a field of 180° in front of him and this field (in radiants) is divided in 721 section.
+
 With this function the velocity is published on the `cmd_vel` topic and eith the control algorithm it possible to determine the evolution of the robot based on the distance.
 
 
@@ -87,9 +102,13 @@ With this function the velocity is published on the `cmd_vel` topic and eith the
 The UI node represent the user interface of the project. This node constantly wait for an input for the user, which can either ask to increment or decrement the velocity, or to put the robot in the initial position.
 
 The commands used are:
-`a` to increase the velocity,
-`d` to decrease the velocity,
+
+`a` to increase the velocity
+
+`d` to decrease the velocity
+
 `r` to reset the position.
+
 You can manage the speed of the robot and reset the position thanks to the service Velocity.srv in the srv folder.
 
 Subscriber
@@ -98,9 +117,11 @@ Subscriber
 This node has two functions:
 
 * char Input():
+
 print a character request message and return the character given in input by the user.
 
 * void ScanCallback(const sensor_msgs::LaserScan::ConstPtr& msg):
+
 used to send the request to change the velocity and reset the position.
 The request of the service `char input` is sent to the server, located in controller node, by the client (UI node), in the server the request is received and the velocity is modified consequently. The value of acceleration is assigned to service response `float32 acc`.
 
