@@ -112,6 +112,7 @@ With this function the velocity is published on the `cmd_vel` topic and eith the
 ## UI node
 
 The UI node represent the user interface of the project. This node constantly wait for an input for the user, which can either ask to increment or decrement the velocity, or to put the robot in the initial position.
+The robot may crash if the speed is increased too much.
 
 The commands used are:
 
