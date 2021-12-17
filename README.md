@@ -22,10 +22,22 @@ To be able to run the nodes you must first run the master:
 ```bashscript
 $ roscore &
 ```
-To run the program:
+
+To run the environment:
 ```bashscript
-$ rosrun second_assignment node.launch
+$ rosrun stage_ros stageros $(rospack find second_assignment)/world/my_world.world
 ```
+
+To run the contol_node, open a second terminal and type:
+```bashscript
+$ rosrun second_assignment control_node
+```
+
+To run the ui_node, open a third terminal and type:
+```bashscript
+$ rosrun second_assignment ui_node
+```
+
 Now you can see the robot starts to move in the cicuit.
 
 Nodes
@@ -134,9 +146,51 @@ Pseudocode
 
 ```pseudocode
 
+float RobotDistance(min, max, dist_obs[])
+  calculate the minimum distance from an obstacle in a range of 720 elements
+  return the distant valyue
+
+bool VelocityCallback(req, res)
+  handle the request input coming from ui_node
+  if input is 'a'
+    increment the velocity
+  else if input is 'd'
+    decrement the velocity
+  else if infut is 'r'
+    reset the position
+   else if input is 'x'
+          return false;
+    else
+      "WRONG COMMAND"
+
+void LaserCallback(scan)
+  calculate the min distance of the robot from the wall in the left, right and front position with the function RobotDistance
+
+  if ther is no obstacles in the front of the robot
+    go the robot forward
+    if robot is closer to the obstacles to the left
+      turn the robot on the right
+    else if the robot is closer to the obstacles to the right
+      turn the robot on the left
+
+int main ()
+  initializing control_node and the NodeHandle
+  definition of service, publisher and subscriber
 ```
+
 ## Ui_node
 
 ```pseudocode
 
+char Input()
+  print a character request message and return the character given in input by the user.
+
+void ScanCallback(msg)
+  send the request to change the velocity and reset the position.
+
+int main ()
+
+  initializing ui_node and the NodeHandle
+  definition of client and subscriber
+ 
 ```
