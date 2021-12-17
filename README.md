@@ -74,41 +74,41 @@ This node has three functions:
 
 * `float RobotDistance(int min, int max, float dist_obs[])` in which:
 
-`min`: minimum index of the subsection of the array that we want to analyze.
+    `min`: minimum index of the subsection of the array that we want to analyze.
 
-`max`: maximum index of the subsection of the array that we want to analyze.
+    `max`: maximum index of the subsection of the array that we want to analyze.
 
-`dist_obs[]`: array wich contains 721 elements wich are the distance of the obstacles from the robot.
+    `dist_obs[]`: array wich contains 721 elements wich are the distance of the obstacles from the robot.
 
-`dist_value`: minimun distance from an obstacle in the subsection of the array.
+    `dist_value`: minimun distance from an obstacle in the subsection of the array.
 
-It is possible to use the ranges vector to see robot distance from the wall.
+    It is possible to use the ranges vector to see robot distance from the wall.
 
 * `bool VelocityCallback(second_assignment::Velocity::Request &req, second_assignment::Velocity::Response &res)`:
 
-allows to receive and manage requests received from node UI.
+    allows to receive and manage requests received from node UI.
 
-The user through the inputs sent by keyboard can change the speed of the robot or reset its position:
+    The user through the inputs sent by keyboard can change the speed of the robot or reset its position:
 
-`a` to increase the velocity
+    `a` to increase the velocity
 
-`d` to decrease the velocity
+    `d` to decrease the velocity
 
-`r` to reset the position
+    `r` to reset the position
 
-To reset the position you need the standar service 'reset_position' from the 'std_srvs'package.
+    To reset the position you need the standar service '/reset_position' from the 'std_srvs'package.
 
-`x` to avoid to increment non-stop
+    `x` to avoid to increment non-stop
 
-This function also creates the server's response to the client's request. The response is a float containing the value of accelleration.
+    This function also creates the server's response to the client's request. The response is a float containing the value of accelleration.
 
 * `void LaserCallback(const sensor_msgs::LaserScan::ConstPtr& scan)`:
 
-is called when a message is posted on the `base_scan` topic. 
+    is called when a message is posted on the `base_scan` topic. 
 
-The robot can see with a field of 180° in front of him and this field (in radiants) is divided in 721 section.
+    The robot can see with a field of 180° in front of him and this field (in radiants) is divided in 721 section.
 
-With this function the velocity is published on the `cmd_vel` topic and eith the control algorithm it possible to determine the evolution of the robot based on the distance.
+    With this function the velocity is published on the `cmd_vel` topic and eith the control algorithm it possible to determine the evolution of the robot based on the distance.
 
 ### UI node ###
 
@@ -133,12 +133,12 @@ This node has two functions:
 
 * `char Input()`:
 
-print a character request message and return the character given in input by the user.
+    print a character request message and return the character given in input by the user.
 
-* `void ScanCallback(const sensor_msgs::LaserScan::ConstPtr& msg)`:
+* `void Callback(const sensor_msgs::LaserScan::ConstPtr& msg)`:
 
-used to send the request to change the velocity and reset the position.
-The request of the service `char input` is sent to the server, located in controller node, by the client (UI node), in the server the request is received and the velocity is modified consequently. The value of acceleration is assigned to service response `float32 acc`.
+    used to send the request to change the velocity and reset the position.
+    The request of the service `char input` is sent to the server, located in controller node, by the client (UI node), in the server the request is received and the velocity is modified consequently. The value of acceleration is assigned to service response `float32 acc`.
 
 
 Pseudocode
@@ -147,11 +147,12 @@ Pseudocode
 ### Conrol_node ###
 
 ```pseudocode
-float RobotDistance(min, max, dist_obs[])
+float RobotDistance(min, max, dist_obs[]){
   calculate the minimum distance from an obstacle in a range of 720 elements
   return the distant valyue
+}  
 
-bool VelocityCallback(req, res)
+bool VelocityCallback(req, res){
   handle the request input coming from ui_node
   if input is 'a'
     increment the velocity
@@ -160,11 +161,12 @@ bool VelocityCallback(req, res)
   else if infut is 'r'
     reset the position
    else if input is 'x'
-          return false;
+    return false;
     else
       "WRONG COMMAND"
+}
 
-void LaserCallback(scan)
+void LaserCallback(scan){
   calculate the min distance of the robot from the wall in the left, right and front position with the function RobotDistance
 
   if ther is no obstacles in the front of the robot
@@ -173,24 +175,26 @@ void LaserCallback(scan)
       turn the robot on the right
     else if the robot is closer to the obstacles to the right
       turn the robot on the left
-
-int main ()
+}
+int main (){
   initializing control_node and the NodeHandle
   definition of service, publisher and subscriber
+}
 ```
 
 ### Ui_node ###
 
 ```pseudocode
-char Input()
-  print a character request message and return the character given in input by the user.
+char Input(){
+  print a character request message and return the character given in input by the user
+}  
 
-void ScanCallback(msg)
-  send the request to change the velocity and reset the position.
+void ScanCallback(msg){
+  send the request to change the velocity and reset the position
+}
 
-int main ()
-
+int main (){
   initializing ui_node and the NodeHandle
   definition of client and subscriber
- 
+} 
 ```
