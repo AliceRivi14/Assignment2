@@ -31,7 +31,7 @@ $ rosrun second_assignment controll_node
 ```
 Now you can see the robot starts to move in the cicuit.
 
-If you want to interact with the robot by increasing/decreasing its speed or resetting its position, you can run the node UI_node.cpp with the command:
+If you want to interact with the robot by increasing/decreasing its speed or resetting its position, you can open a new terminal and run the node UI_node.cpp with the command:
 ```bashscript
 $ rosrun second_assignment ui_node
 ```
