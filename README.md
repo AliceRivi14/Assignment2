@@ -36,7 +36,7 @@ The stage_ros node wraps the Stage 2-D multi-robot simulator via libstage and si
 
 Subscriber:
 * `/cmd_vel (geometry_msgs/Twist)` topic, to express the velocity of the robot.
-* 
+
 Publisher
 * `base_scan (sensor_msgs/LaserScan)`: scans from the laser model.
 * `odom (na_msgs/Odometry)`: odometry data from the position model.
