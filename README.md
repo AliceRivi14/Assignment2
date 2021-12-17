@@ -44,7 +44,7 @@ Now you can see the robot starts to move in the cicuit.
 Nodes
 -----------
 
-## Stage_ros node ##
+### Stage_ros node ###
 
 The stage_ros node wraps the Stage 2-D multi-robot simulator via libstage and simulates a world as define in .wold file.
 
@@ -59,7 +59,7 @@ Publisher
 * `depth (sensor_msgs/Image)`: depth camera image.
 * `camera_info(sensor_msgs/CameraInfo)`: camera calibration info.
 
-## Control node ##
+### Control node ###
 
 The control node allows the robot to move inside the circuit.
 This node also allows you to handle the input from the Ui node.
@@ -110,8 +110,7 @@ The robot can see with a field of 180° in front of him and this field (in radia
 
 With this function the velocity is published on the `cmd_vel` topic and eith the control algorithm it possible to determine the evolution of the robot based on the distance.
 
-
-## UI node ##
+### UI node ###
 
 The UI node represent the user interface of the project. This node constantly wait for an input for the user, which can either ask to increment or decrement the velocity, or to put the robot in the initial position.
 The robot may crash if the speed is increased too much.
@@ -145,10 +144,9 @@ The request of the service `char input` is sent to the server, located in contro
 Pseudocode
 ------------------------
 
-## Control_node ##
+### Conrol_node ###
 
 ```pseudocode
-
 float RobotDistance(min, max, dist_obs[])
   calculate the minimum distance from an obstacle in a range of 720 elements
   return the distant valyue
@@ -181,10 +179,9 @@ int main ()
   definition of service, publisher and subscriber
 ```
 
-## Ui_node ##
+### Ui_node ###
 
 ```pseudocode
-
 char Input()
   print a character request message and return the character given in input by the user.
 
