@@ -59,10 +59,11 @@ Publisher:
 This node has three functions:
 
 * `float RobotDistance(int min, int max, float dist_obs[])` in which:
-`min`: minimum index of the subsection of the array that we want to analyze
-`max`: maximum index of the subsection of the array that we want to analyze
+
+`min`: minimum index of the subsection of the array that we want to analyze.
+`max`: maximum index of the subsection of the array that we want to analyze.
 `dist_obs[]`: array wich contains 721 elements wich are the distance of the obstacles from the robot.
-`dist_value`: minimun distance from an obstacle in the subsection of the array
+`dist_value`: minimun distance from an obstacle in the subsection of the array.
 It is possible to use the ranges vector to see robot distance from the wall.
 
 * bool VelocityCallback(second_assignment::Velocity::Request &req, second_assignment::Velocity::Response &res):
@@ -83,7 +84,8 @@ With this function the velocity is published on the `cmd_vel` topic and eith the
 
 ## UI node
 
-The UI node represent the user interface of the project. This node constantly wait for an input for the user, which can either ask to increment or decrement the velocity, or to put the robot in the initial position:
+The UI node represent the user interface of the project. This node constantly wait for an input for the user, which can either ask to increment or decrement the velocity, or to put the robot in the initial position.
+
 The commands used are:
 `a` to increase the velocity,
 `d` to decrease the velocity,
@@ -92,6 +94,7 @@ You can manage the speed of the robot and reset the position thanks to the servi
 
 Subscriber
 * `base_scan (sensor_msgs/LaserScan)`: scans from the laser model.
+
 This node has two functions:
 
 * char Input():
