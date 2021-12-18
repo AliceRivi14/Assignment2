@@ -199,3 +199,10 @@ int main (){
   definition of client and subscriber
 } 
 ```
+
+Rqt_graph
+------------------------
+
+With the command `rosrun rqt_graph` 
+
+![Screenshot](rosgraph.png)
