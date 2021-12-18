@@ -30,17 +30,17 @@ To run the environment:
 $ rosrun stage_ros stageros $(rospack find second_assignment)/world/my_world.world
 ```
 
-To run the contol_node, open a second terminal and type:
+To run the Contol_node, open a second terminal and type:
 ```bashscript
 $ rosrun second_assignment control_node
 ```
 
-To run the ui_node, open a third terminal and type:
+To run the Ui_node, open a third terminal and type:
 ```bashscript
 $ rosrun second_assignment ui_node
 ```
 
-Now you can see the robot starts to move in the cicuit.
+Now you can see the robot starts to move in the Monza's cicuit.
 
 Nodes
 -----------
@@ -50,7 +50,7 @@ Nodes
 The stage_ros node wraps the Stage 2-D multi-robot simulator via libstage and simulates a world as define in .wold file.
 
 Subscriber:
-* `/cmd_vel (geometry_msgs/Twist)` topic, to express the velocity of the robot.
+* `/cmd_vel (geometry_msgs/Twist)`: to express the velocity of the robot.
 
 Publisher
 * `base_scan (sensor_msgs/LaserScan)`: scans from the laser model.
@@ -69,7 +69,7 @@ Subscriber:
 * `base_scan (sensor_msgs/LaserScan)`: scans from the laser model.
 
 Publisher:
-* `/cmd_vel (geometry_msgs/Twist)` topic, to express the velocity of the robot.
+* `/cmd_vel (geometry_msgs/Twist)` : to express the velocity of the robot.
 
 This node has three functions:
 
