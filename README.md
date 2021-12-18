@@ -118,11 +118,11 @@ The robot may crash if the speed is increased too much.
 
 The commands used are:
 
-`a` to increase the velocity
+`A` to increase the velocity
 
-`d` to decrease the velocity
+`D` to decrease the velocity
 
-`r` to reset the position.
+`R` to reset the position.
 
 You can manage the speed of the robot and reset the position thanks to the service Velocity.srv in the srv folder.
 
