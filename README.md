@@ -205,4 +205,4 @@ Rqt_graph
 
 With the command `rosrun rqt_graph` 
 
-![Screenshot](rosgraph.png)
+![Alt text](relative/path/to/rqtgrapg.jpg?raw=true "Rqt_graph")
