@@ -202,7 +202,7 @@ int main (){
 
 Rqt_graph
 ------------------------
-With the command `rosrun rqt_graph` we can see the relationship between all nodes and topics
+With the command `rosrun rqt_graph rqt_graph` we can see the relationship between all nodes and topics
 
 ![rosgraph](https://user-images.githubusercontent.com/92019811/146639133-1fce6a02-771d-43dc-af72-ee1d6b23ad5a.png)
 
