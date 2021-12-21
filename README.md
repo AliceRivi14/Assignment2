@@ -97,7 +97,7 @@ This node has three functions:
 
     `r` to reset the position
 
-    To reset the position you need the standar service '/reset_position' from the 'std_srvs'package.
+    To reset the position you need the standard service '/reset_position' from the 'std_srvs'package.
 
     `x` to avoid to increment non-stop
 
@@ -105,11 +105,11 @@ This node has three functions:
 
 * `void LaserCallback(const sensor_msgs::LaserScan::ConstPtr& scan)`:
 
-    is called when a message is posted on the `base_scan` topic. 
+    is called when a message is posted on the `/base_scan` topic. 
 
     The robot can see with a field of 180° in front of him and this field (in radiants) is divided in 721 section.
 
-    With this function the velocity is published on the `cmd_vel` topic and eith the control algorithm it possible to determine the evolution of the robot based on the distance.
+    With this function the velocity is published on the `/cmd_vel` topic and with the control algorithm it possible to determine the evolution of the robot based on the distance.
 
 ### UI node ###
 
@@ -126,7 +126,7 @@ The commands used are:
 
 You can manage the speed of the robot and reset the position thanks to the service Velocity.srv in the srv folder.
 
-Subscriber
+Subscriber:
 * `base_scan (sensor_msgs/LaserScan)`: scans from the laser model.
 
 
@@ -150,7 +150,7 @@ Pseudocode
 ```pseudocode
 float RobotDistance(min, max, dist_obs[]){
   calculate the minimum distance from an obstacle in a range of 720 elements
-  return the distant valyue
+  return the distant value
 }  
 
 bool VelocityCallback(req, res){
@@ -159,7 +159,7 @@ bool VelocityCallback(req, res){
     increment the velocity
   else if input is 'd'
     decrement the velocity
-  else if infut is 'r'
+  else if input is 'r'
     reset the position
    else if input is 'x'
     return false;
@@ -170,13 +170,14 @@ bool VelocityCallback(req, res){
 void LaserCallback(scan){
   calculate the min distance of the robot from the wall in the left, right and front position with the function RobotDistance
 
-  if ther is no obstacles in the front of the robot
-    go the robot forward
+  if there is obstacles in the front of the robot
     if robot is closer to the obstacles to the left
       turn the robot on the right
     else if the robot is closer to the obstacles to the right
       turn the robot on the left
+  else go the robot forward
 }
+
 int main (){
   initializing control_node and the NodeHandle
   definition of service, publisher and subscriber
