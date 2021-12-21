@@ -155,26 +155,27 @@ float RobotDistance(min, max, dist_obs[]){
 
 bool VelocityCallback(req, res){
   handle the request input coming from ui_node
+  
   if input is 'a'
     increment the velocity
   else if input is 'd'
     decrement the velocity
   else if input is 'r'
     reset the position
-   else if input is 'x'
+  else if input is 'x'
     return false;
-    else
-      "WRONG COMMAND"
+  else
+    print:"WRONG COMMAND"
 }
 
 void LaserCallback(scan){
   calculate the min distance of the robot from the wall in the left, right and front position with the function RobotDistance
 
   if there is obstacles in the front of the robot
-    if robot is closer to the obstacles to the left
-      turn the robot on the right
-    else if the robot is closer to the obstacles to the right
-      turn the robot on the left
+     if robot is closer to the obstacles to the left
+        turn the robot on the right
+     else if the robot is closer to the obstacles to the right
+        turn the robot on the left
   else go the robot forward
 }
 
