@@ -56,7 +56,7 @@ Publisher:
 * `base_scan (sensor_msgs/LaserScan)`: scans from the laser model.
 * `odom (na_msgs/Odometry)`: odometry data from the position model.
 * `base_pose_ground_truth (nav_msgs/Odometry)`: ground truth pose.
-* `image (sensor_msgs/Image)`: visual camera image:
+* `image (sensor_msgs/Image)`: visual camera image.
 * `depth (sensor_msgs/Image)`: depth camera image.
 * `camera_info(sensor_msgs/CameraInfo)`: camera calibration info.
 
