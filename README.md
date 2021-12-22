@@ -185,7 +185,7 @@ int main (){
 }
 ```
 
-### Ui_node ###
+### UI_node ###
 
 ```pseudocode
 char Input(){
