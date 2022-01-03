@@ -14,7 +14,7 @@ In a terminale type the following commands:
 ```bashscript
 $ mkdir -p ROS_ws/src
 $ cd ROS_ws/src
-$ git clone https://github.com/AliceRivi14/Assignment2
+$ git clone https://github.com/AliceRivi14/Assignment2.git
 $ cd ..
 $ catkin_make
 ```
