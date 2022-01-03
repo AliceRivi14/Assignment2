@@ -65,7 +65,7 @@ void LaserCallback(const sensor_msgs::LaserScan::ConstPtr& scan)
   float minR = RobotDistance(0, 100, laser);
   float minF = RobotDistance(300, 400, laser);
   float minL = RobotDistance(620, 720, laser);
-  ROS_INFO("Distance: %f, %f, %f", minL, minF, minL);
+  ROS_INFO("Distance: %f, %f, %f", minR, minF, minL);
 
   // control algorithm
   geometry_msgs::Twist vel;
