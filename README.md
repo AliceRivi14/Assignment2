@@ -113,7 +113,7 @@ This node has three functions:
 
 ### UI node ###
 
-The UI node represent the user interface of the project. This node constantly wait for an input for the user, which can either ask to increment or decrement the velocity, or to put the robot in the initial position.
+The UI node represent the user interface of the project. This node constantly wait for an input from the user, which can either ask to increment or decrement the velocity, or to put the robot in the initial position.
 The robot may crash if the speed is increased too much.
 
 The commands used are:
