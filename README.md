@@ -192,7 +192,7 @@ function Input(){
   print a character request message and return the character given in input by the user
 }  
 
-function ScanCallback(msg){
+function Callback(msg){
   send the request to change the velocity and reset the position
 }
 
