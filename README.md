@@ -79,7 +79,7 @@ This node has three functions:
 
     `max`: maximum index of the subsection of the array that we want to analyze.
 
-    `dist_obs[]`: array wich contains 721 elements wich are the distance of the obstacles from the robot.
+    `dist_obs[]`: array wich contains 720 elements wich are the distance of the obstacles from the robot.
 
     `dist_value`: minimun distance from an obstacle in the subsection of the array.
 
