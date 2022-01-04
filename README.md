@@ -148,7 +148,7 @@ Pseudocode
 ### Conrol_node ###
 
 ```pseudocode
-float RobotDistance(min, max, dist_obs[]){
+function RobotDistance(min, max, dist_obs[]){
   calculate the minimum distance from an obstacle in a range of 720 elements
   return the distant value
 }  
