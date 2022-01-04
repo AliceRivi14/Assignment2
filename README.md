@@ -153,7 +153,7 @@ float RobotDistance(min, max, dist_obs[]){
   return the distant value
 }  
 
-bool VelocityCallback(req, res){
+function VelocityCallback(req, res){
   handle the request input coming from ui_node
   
   if input is 'a'
@@ -168,7 +168,7 @@ bool VelocityCallback(req, res){
     print:"WRONG COMMAND"
 }
 
-void LaserCallback(scan){
+function LaserCallback(scan){
   calculate the min distance of the robot from the wall in the left, right and front position with the function RobotDistance
 
   if there is obstacles in the front of the robot
@@ -179,7 +179,7 @@ void LaserCallback(scan){
   else go the robot forward
 }
 
-int main (){
+function main (){
   initializing control_node and the NodeHandle
   definition of service, publisher and subscriber
 }
@@ -188,15 +188,15 @@ int main (){
 ### UI_node ###
 
 ```pseudocode
-char Input(){
+function Input(){
   print a character request message and return the character given in input by the user
 }  
 
-void ScanCallback(msg){
+function ScanCallback(msg){
   send the request to change the velocity and reset the position
 }
 
-int main (){
+function main (){
   initializing ui_node and the NodeHandle
   definition of client and subscriber
 } 
