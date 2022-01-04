@@ -56,8 +56,8 @@ bool VelocityCallback(second_assignment::Velocity::Request &req, second_assignme
 // Function to hande the datas about /base_scan topic
 void LaserCallback(const sensor_msgs::LaserScan::ConstPtr& scan)
 {
-  float laser[721];
-  for(int i=0; i<722; i++){
+  float laser[720];
+  for(int i=0; i<721; i++){
     laser[i] = scan->ranges[i];
   }
 
