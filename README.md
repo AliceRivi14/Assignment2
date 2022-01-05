@@ -5,7 +5,7 @@ Cpp Robotics Simulator
 
 This is a simple, portable robot simulator developed by [Student Robotics](https://studentrobotics.org) in ROS.
 
-The tasks are to move the robot in the environment (a scaled reproduction of the Monza's circuit) without hitting the wall, and give the user the possibility to increase and decrease robot velocity or reset robot position.
+The tasks are to move the robot in the environment (a scaled reproduction of the Monza's circuit) without hitting the wall, give the user the possibility to increase and decrease robot velocity or reset robot position.
 
 Installing and running
 ----------------------
