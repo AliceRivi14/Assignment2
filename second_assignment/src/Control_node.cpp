@@ -94,7 +94,7 @@ void LaserCallback(const sensor_msgs::LaserScan::ConstPtr& scan)
 
 int main (int argc, char **argv)
 {
-  // initializing control_node
+  // Initializing control_node
   ros::init(argc, argv, "control_node");
   ros::NodeHandle nh;
 
