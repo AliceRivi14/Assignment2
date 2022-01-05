@@ -4,7 +4,7 @@
 #include "geometry_msgs/Twist.h"
 #include "std_srvs/Empty.h"
 
-ros::Publisher pubv; // global publisher
+ros::Publisher pubv; // Global publisher
 
 float acceleration = 0.0;
 std_srvs::Empty reset;
