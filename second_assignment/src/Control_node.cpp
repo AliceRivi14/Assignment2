@@ -74,12 +74,12 @@ void LaserCallback(const sensor_msgs::LaserScan::ConstPtr& scan)
       // Robot is closer to the obstacles to the left
     if(minR < minL){
         vel.linear.x = 0.2;
-        vel.angular.z = 1.0; // turn right
+        vel.angular.z = 1.0; // Turn right
     }
       // Robot is closer to the obstacles to the right
     else if (minL < minR){
         vel.linear.x = 0.2;
-        vel.angular.z = -1.0; // turn left
+        vel.angular.z = -1.0; // Turn left
     }
   }
   // No obstacles
