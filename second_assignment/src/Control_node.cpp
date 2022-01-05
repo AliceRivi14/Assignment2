@@ -12,11 +12,11 @@ std_srvs::Empty reset;
 // Function to calculate the minimum distance from an obstacle in a range of 720 elements
 float RobotDistance(int min, int max, float dist_obs[])
 {
-  float dist_value = 25.0; // general distance
+  float dist_value = 25.0; // General distance
   for(int i = min; i <= max; i++)
   {
     if(dist_obs[i] <= dist_value)
-      dist_value = dist_obs[i]; // minimum value
+      dist_value = dist_obs[i]; // Minimum value
   }
   return dist_value;
 }
@@ -35,12 +35,12 @@ bool VelocityCallback(second_assignment::Velocity::Request &req, second_assignme
           acceleration -= 0.5;
           req.input = 'x';
     break;
-        // Input to reset the posisition
+     // Input to reset the posisition
     case ('r'):
           ros::service::call("/reset_position",reset);
           req.input = 'x';
     break;
-        // The velocity doesn't increment pressing another key
+     // The velocity doesn't increment pressing another key
     case ('x'):
           return false;
     break;
@@ -61,35 +61,35 @@ void LaserCallback(const sensor_msgs::LaserScan::ConstPtr& scan)
     laser[i] = scan->ranges[i];
   }
 
-  // minimum distance from the wall on robot right,front and left
+  // Minimum distance from the wall on robot right,front and left
   float minR = RobotDistance(0, 100, laser);
   float minF = RobotDistance(300, 400, laser);
   float minL = RobotDistance(620, 720, laser);
   ROS_INFO("Distance: %f, %f, %f", minR, minF, minL);
 
-  // control algorithm
+  // Control algorithm
   geometry_msgs::Twist vel;
-  // obstacles in front of the robot
+  // Obstacles in front of the robot
   if(minF < 1.5) {
-      // robot is closer to the obstacles to the left
+      // Robot is closer to the obstacles to the left
     if(minR < minL){
         vel.linear.x = 0.2;
         vel.angular.z = 1.0; // turn right
     }
-      // robot is closer to the obstacles to the right
+      // Robot is closer to the obstacles to the right
     else if (minL < minR){
         vel.linear.x = 0.2;
         vel.angular.z = -1.0; // turn left
     }
   }
-  // no obstacles
+  // No obstacles
   else {
-      vel.linear.x = 1.5 + acceleration; //go straight and increment/decrement the velocity
+      vel.linear.x = 1.5 + acceleration; // Go straight and increment/decrement the velocity
       vel.angular.z = 0.0;
     }
 
 
-  pubv.publish(vel); // publish on /cmd_vel topic
+  pubv.publish(vel); // Publish on /cmd_vel topic
 }
 
 int main (int argc, char **argv)
