@@ -134,7 +134,7 @@ This node has two functions:
 
 * `char Input()`:
 
-    print a character request message and return the character given in input by the user.
+    prints a character request message and return the character given in input by the user.
 
 * `void Callback(const sensor_msgs::LaserScan::ConstPtr& msg)`:
 
