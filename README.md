@@ -176,7 +176,8 @@ function LaserCallback(scan){
         turn the robot on the right
      else if the robot is closer to the obstacles to the right
         turn the robot on the left
-  else go the robot forward
+  else
+    go the robot forward
 }
 
 function main (){
