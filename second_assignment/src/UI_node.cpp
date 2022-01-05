@@ -5,7 +5,7 @@
 #include "second_assignment/Velocity.h"
 #include "std_srvs/Empty.h"
 
-ros::ServiceClient client; //global client
+ros::ServiceClient client; // Global client
 
 // Function to obtain the input by the user
 char Input()
@@ -22,8 +22,8 @@ void Callback(const sensor_msgs::LaserScan::ConstPtr& msg)
 {
   second_assignment::Velocity srv;
 
-  char inpkey = Input(); // return the input char
-  srv.request.input = inpkey; // sent the datas to the control_node
+  char inpkey = Input(); // Return the input char
+  srv.request.input = inpkey; // Sent the datas to the control_node
 
   client.waitForExistence();
   client.call(srv);
@@ -31,7 +31,7 @@ void Callback(const sensor_msgs::LaserScan::ConstPtr& msg)
 
 int main (int argc, char **argv)
 {
-  // initializing the ui_node
+  // Initializing the ui_node
   ros::init(argc, argv, "ui_node");
   ros::NodeHandle nh;
 
