@@ -138,8 +138,8 @@ This node has two functions:
 
 * `void Callback(const sensor_msgs::LaserScan::ConstPtr& msg)`:
 
-    used to send the request to change the velocity and reset the position.
-    The request of the service `char input` is sent to the server, located in controller node, by the client (UI node), in the server the request is received and the velocity is modified consequently. The value of acceleration is assigned to service response `float32 acc`.
+    is used to send the request to change the velocity and reset the position.
+    The request of the service `char input` is sent to the server, located in Control node, by the client (UI node), in the server the request is received and the velocity is modified consequently. The value of acceleration is assigned to service response `float32 acc`.
 
 
 Pseudocode
