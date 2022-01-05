@@ -50,7 +50,7 @@ Nodes
 The stage_ros node wraps the Stage 2-D multi-robot simulator via libstage and simulates a world as define in .wold file.
 
 Subscriber:
-* `/cmd_vel (geometry_msgs/Twist)`: to express the velocity of the robot.
+* `cmd_vel (geometry_msgs/Twist)`: to express the velocity of the robot.
 
 Publisher:
 * `base_scan (sensor_msgs/LaserScan)`: scans from the laser model.
@@ -69,7 +69,7 @@ Subscriber:
 * `base_scan (sensor_msgs/LaserScan)`: scans from the laser model.
 
 Publisher:
-* `/cmd_vel (geometry_msgs/Twist)` : to express the velocity of the robot.
+* `cmd_vel (geometry_msgs/Twist)` : to express the velocity of the robot.
 
 This node has three functions:
 
@@ -214,5 +214,5 @@ Possible improvements
 ----------------
 Although the project works quite well, I think they could make some improvements, especially to avoid some problems due to the robot control mode:
 * A maximum achievable speed could be set, so that the robot avoids crashing if the speed is increased too much, varying the limit depending on whether you are cornering or in a fairly straight stretch.
-* You could set a maximum angle of rotation of the robot so as to avoid that at certain points, for example the first curve, misread the parameters provided by the laser_scan and face going in the opposite direction
+* You could set a maximum angle of rotation of the robot so as to avoid that at certain points, for example the first curve, misread the parameters provided by the base_scan and face going in the opposite direction
 
