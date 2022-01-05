@@ -63,7 +63,7 @@ Publisher:
 ### Control node ###
 
 The control node allows the robot to move inside the circuit.
-This node also allows you to handle the input from the Ui node.
+This node also allows you to handle the input from the UI node.
 
 Subscriber:
 * `base_scan (sensor_msgs/LaserScan)`: scans from the laser model.
