@@ -107,7 +107,7 @@ This node has three functions:
 
     is called when a message is posted on the `/base_scan` topic. 
 
-    The robot can see with a field of 180° in front of him and this field (in radiants) is divided in 721 section.
+    The robot can see with a field of 180° in front of him and this field (in radiants) is divided in 720 section.
 
     With this function the velocity is published on the `/cmd_vel` topic and with the control algorithm it possible to determine the evolution of the robot based on the distance.
 
