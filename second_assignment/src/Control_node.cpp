@@ -40,13 +40,12 @@ bool VelocityCallback(second_assignment::Velocity::Request &req, second_assignme
           ros::service::call("/reset_position",reset);
           req.input = 'x';
     break;
-     // The velocity doesn't increment pressing another key
+     // The velocity doesn't increment/decrement pressing another key
     case ('x'):
           return false;
     break;
     default:
           std::cout << "WRONG COMMAND! \n";
-          fflush(stdout);
     break;
   }
 
