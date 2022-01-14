@@ -212,7 +212,7 @@ With the command `rosrun rqt_graph rqt_graph` we can see the relationship betwee
 
 Possible improvements
 ----------------
-Although the project works quite well, I think they could make some improvements, especially to avoid some problems due to the robot control mode:
+Although the project works quite well, I think some improvements could be made, especially to avoid some problems due to the robot control mode:
 * A maximum achievable speed could be set, so that the robot avoids crashing if the speed is increased too much, varying the limit depending on whether you are cornering or in a fairly straight stretch.
 * You could set a maximum angle of rotation of the robot so as to avoid that at certain points, for example the first curve, misread the parameters provided by the base_scan and face going in the opposite direction
 
