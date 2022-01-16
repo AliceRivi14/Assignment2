@@ -10,7 +10,7 @@ The tasks are to move the robot in the environment (a scaled reproduction of the
 Installing and running
 ----------------------
 
-In a terminale type the following commands:
+In a terminal type the following commands:
 ```bashscript
 $ mkdir -p ROS_ws/src
 $ cd ROS_ws/src
